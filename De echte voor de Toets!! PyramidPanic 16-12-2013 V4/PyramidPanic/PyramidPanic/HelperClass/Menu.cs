@@ -119,7 +119,7 @@ namespace PyramidPanic
                     this.quit.Color = this.activeColor;
                     if (Input.EdgeDetectKeyDown(Keys.Enter))
                     {
-                        game.Exit();
+                        this.game.IState = this.game.QuitScene;
                     }
                     break;
             }
@@ -172,7 +172,7 @@ namespace PyramidPanic
                             {
                                 if (Input.EdgeDetectMousePressLeft())
                                 {
-                                    this.game.Exit();
+                                    this.game.IState = this.game.QuitScene;
                                 }
                                 this.ChangeButtonColorToNormal();
                                 this.buttonActive = Buttons.Quit;

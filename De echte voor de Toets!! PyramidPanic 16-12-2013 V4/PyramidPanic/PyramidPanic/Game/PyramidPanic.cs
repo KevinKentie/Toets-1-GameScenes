@@ -37,6 +37,9 @@ namespace PyramidPanic
         //Maak een variable aan van het type ScoreScene
         private ScoresScene scoreScene;
 
+        //Maak een variable aan van het type QuitScene
+        private QuitScene quitScene;
+
         //Maak een variable van het type interface IState
         private IState iState;
 
@@ -48,6 +51,11 @@ namespace PyramidPanic
         {
             get { return this.iState; }
             set { this.iState = value; }
+        }
+
+        public QuitScene QuitScene
+        {
+            get { return this.quitScene; }
         }
 
         public ScoresScene ScoreScene
@@ -148,6 +156,10 @@ namespace PyramidPanic
             //We maken nu het object/instantie aan van het type scoreScene. Dit doe je door
             //de constructor aan te roepen van scoreScene class.
             this.scoreScene = new ScoresScene(this);
+
+            //We maken nu het object/instantie aan van het type quitScene. Dit doe je door
+            //de constructor aan te roepen van quitScene class.
+            this.quitScene = new QuitScene(this);
 
             this.iState = this.startScene;
 
